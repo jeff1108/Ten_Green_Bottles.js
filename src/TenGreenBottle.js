@@ -4,8 +4,12 @@
     // this.counter = counter;
 }
 
-  TenGreenBottle.prototype.verseThreeOnwardLyrics = function(num) {
-    return _firstSecondLinePlural(this.num) + _thirdLinePlural() + _lastLinePlural(this.num)
+  TenGreenBottle.prototype.verseThreeFromLastOnwardLyrics = function(num) {
+    return _firstSecondLinePlural(num) + _thirdLinePlural() + _lastLinePlural(num)
+  }
+
+  TenGreenBottle.prototype.verseTwoFromLastOnwardLyrics = function(num) {
+    return _firstSecondLinePlural(num) + _thirdLinePlural() + _lastLine(num)
   }
 
   function _firstSecondLinePlural(num) {
@@ -21,6 +25,9 @@
     return `There'll be ${numberToWords.toWords(num - 1)} green bottles hanging on the wall`
   }
 
+  function _lastLine(num) {
+    return `There'll be ${numberToWords.toWords(num - 1)} green bottle hanging on the wall`
+  }
 
   // function last_lyrics(num) {
   //   firstline = `${numberToWords.toWords(num).capitalize()} green bottle hanging on the wall\n`
