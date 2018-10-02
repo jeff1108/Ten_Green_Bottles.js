@@ -12,13 +12,16 @@
   }
 
   TenGreenBottle.prototype.verseTwoFromLastOnwardLyrics = function(num) {
-    if (num != 2 ) {
+    if (num != 2) {
       throw new Error("verse needs to be verse 2")
     }
     return _firstSecondLine(num) + _thirdLine() + _lastLine(num)
   }
 
   TenGreenBottle.prototype.verseLastOnwardLyrics = function(num) {
+    if(num > 1) {
+      throw new Error("This is not the last verse")
+    }
     return _firstSecondLine(num) + _thirdLine() + _lastLine(num)
   }
 
