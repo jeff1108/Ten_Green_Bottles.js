@@ -5,7 +5,13 @@ describe("TenGreenBottle", () => {
     song = new TenGreenBottle(3)
   });
 
-  describe("#veresLyrics", function() {
+  describe("#initialize", () => {
+    it("throw error when input is a negative number", () => {
+      expect( function() {new TenGreenBottle(-1)} ).toThrowError("number needs to be greater than 0")
+    });
+  });
+
+  describe("#veresLyrics", () => {
     it("returns ten green bottle", () => {
       expect(song.verseLyrics(10)).toEqual("Ten green bottles hanging on the wall\n" +
                                     "Ten green bottles hanging on the wall\n" +

@@ -1,5 +1,8 @@
 (function(exports) {
   function TenGreenBottle(num) {
+    if(num < 0) {
+      throw new Error("number needs to be greater than 0")
+    }
     this.num = num;
 }
   TenGreenBottle.prototype.sing = function() {
