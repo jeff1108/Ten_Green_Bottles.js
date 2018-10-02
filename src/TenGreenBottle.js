@@ -12,6 +12,9 @@
   }
 
   TenGreenBottle.prototype.verseTwoFromLastOnwardLyrics = function(num) {
+    if (num != 2 ) {
+      throw new Error("verse needs to be verse 2")
+    }
     return _firstSecondLine(num) + _thirdLine() + _lastLine(num)
   }
 
