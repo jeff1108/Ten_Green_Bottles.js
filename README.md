@@ -7,7 +7,7 @@ Use library
 
 ## Launch and Test
 ```
-$ git clone https://github.com/jeff1108/Leap_year.js.git
+$ git clone https://github.com/jeff1108/Ten_Green_Bottles.js.git
 $ open SpecRunner.html
 ```
 Open the console and type:
