@@ -1,29 +1,19 @@
 (function(exports) {
   function TenGreenBottle(num) {
     this.num = num;
-    // this.counter = counter;
 }
-
-  TenGreenBottle.prototype.verseThreeFromLastOnwardLyrics = function(num) {
-    if (num < 3) {
-      throw new Error("verse needs to be thrid from last")
+  TenGreenBottle.prototype.sing = function() {
+    var lyrics = []
+    for (var i = this.num; i > 0; i--){
+      lyrics.push(this.verseLyrics(i))
     }
+    return lyrics.join('\n');
+  }
+
+  TenGreenBottle.prototype.verseLyrics = function(num) {
     return _firstSecondLine(num) + _thirdLine() + _lastLine(num)
   }
 
-  TenGreenBottle.prototype.verseTwoFromLastOnwardLyrics = function(num) {
-    if (num != 2) {
-      throw new Error("verse needs to be verse 2")
-    }
-    return _firstSecondLine(num) + _thirdLine() + _lastLine(num)
-  }
-
-  TenGreenBottle.prototype.verseLastOnwardLyrics = function(num) {
-    if(num > 1) {
-      throw new Error("This is not the last verse")
-    }
-    return _firstSecondLine(num) + _thirdLine() + _lastLine(num)
-  }
 
   function _firstSecondLine(num) {
     var word
@@ -39,7 +29,7 @@
   function _lastLine(num) {
     var word
     num - 1 == 1 ? word = "bottle" : word = "bottles"
-    return `There'll be ${numberToWords.toWords(num - 1)} green ${word} hanging on the wall`
+    return `There'll be ${numberToWords.toWords(num - 1)} green ${word} hanging on the wall\n`
   }
 
   String.prototype.capitalize = function() {
